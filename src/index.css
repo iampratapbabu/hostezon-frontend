@@ -1,13 +1,97 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+span{
+  background-color:#3fc1c9;
+  color:white;
+  border-radius:5px;
+  padding:2px;
+}
+h2{
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bold;
+  padding-left: 1rem;
+}
+h4{
+  font-family: 'Montserrat', sans-serif;
+}
+h3{
+  font-family: 'Montserrat', sans-serif;
+}
+p{
+  font-family: 'Poppins', sans-serif;
+  padding:0.2rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+Link{
+   text-decoration: none;
 }
+.btn-margin{
+  margin-left: 0.5rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.block-icon-academics{
+border-radius: 50%;
+margin-left:5rem;
+margin-top:5rem;
+padding:2rem;
+color:#d7385e;
+
+}
+.block-icon-blogs{
+border-radius: 50%;
+margin-left:5rem;
+margin-top:5rem;
+padding:2rem;
+color:#03c4a1;
+
+}
+.block-icon-social{
+border-radius: 50%;
+margin-left:5rem;
+margin-top:5rem;
+padding:2rem;
+color:#726a95;
+}
+.block-icon-shop{
+border-radius: 50%;
+margin-left:5rem;
+margin-top:5rem;
+padding:2rem;
+color:#7579e7;
+}
+
+.block-img{
+  border-radius: 50%;
+margin-top:4rem;
+margin-left:4rem;
+}
+
+.block-about{
+  margin-top: 3rem;
+  padding:1rem;
+}
+
+footer{
+  background-color:#a6f6f1;
+}
+.copyright-text{
+  background-color: #41aea9;
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+
+  color: #ffff;
+  text-align:center;
+}
+/* 
+.carousel-item {
+  height: 400px;
+} */
+
+/*.item-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+} */

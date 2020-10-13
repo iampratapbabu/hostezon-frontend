@@ -1,11 +1,11 @@
 import React,{Fragment} from 'react';
 
-const Header =() => {
+const Users =() => {
   return (
     <Fragment>
-    <h4>This is the header file</h4>
+    <h1>Users file</h1>
     </Fragment>
   );
 }
 
-export default Header;
+export default Users;
