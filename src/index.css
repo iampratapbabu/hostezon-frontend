@@ -1,88 +1,88 @@
-span{
-  background-color:#3fc1c9;
-  color:white;
-  border-radius:5px;
-  padding:2px;
+span {
+  background-color: #3fc1c9;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
 }
-h2{
-  font-family: 'Montserrat', sans-serif;
-  font-weight:bold;
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   padding-left: 1rem;
 }
-h4{
-  font-family: 'Montserrat', sans-serif;
+.title {
+  margin: 0.5rem;
+  text-align: center;
 }
-h3{
-  font-family: 'Montserrat', sans-serif;
+h4 {
+  font-family: "Montserrat", sans-serif;
 }
-p{
-  font-family: 'Poppins', sans-serif;
-  padding:0.2rem;
+h3 {
+  font-family: "Montserrat", sans-serif;
+}
+p {
+  font-family: "Poppins", sans-serif;
+  padding: 0.2rem;
 }
 
-Link{
-   text-decoration: none;
+Link {
+  text-decoration: none;
 }
-.btn-margin{
+.btn-margin {
   margin-left: 0.5rem;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-
-
-.block-icon-academics{
-border-radius: 50%;
-margin-left:5rem;
-margin-top:5rem;
-padding:2rem;
-color:#d7385e;
-
-}
-.block-icon-blogs{
-border-radius: 50%;
-margin-left:5rem;
-margin-top:5rem;
-padding:2rem;
-color:#03c4a1;
-
-}
-.block-icon-social{
-border-radius: 50%;
-margin-left:5rem;
-margin-top:5rem;
-padding:2rem;
-color:#726a95;
-}
-.block-icon-shop{
-border-radius: 50%;
-margin-left:5rem;
-margin-top:5rem;
-padding:2rem;
-color:#7579e7;
-}
-
-.block-img{
+.block-icon-academics {
   border-radius: 50%;
-margin-top:4rem;
-margin-left:4rem;
+  margin-left: 5rem;
+  margin-top: 5rem;
+  padding: 2rem;
+  color: #d7385e;
+}
+.block-icon-blogs {
+  border-radius: 50%;
+  margin-left: 5rem;
+  margin-top: 5rem;
+  padding: 2rem;
+  color: #03c4a1;
+}
+.block-icon-social {
+  border-radius: 50%;
+  margin-left: 5rem;
+  margin-top: 5rem;
+  padding: 2rem;
+  color: #726a95;
+}
+.block-icon-shop {
+  border-radius: 50%;
+  margin-left: 5rem;
+  margin-top: 5rem;
+  padding: 2rem;
+  color: #7579e7;
 }
 
-.block-about{
+.block-img {
+  border-radius: 50%;
+  margin-top: 4rem;
+  margin-left: 4rem;
+}
+
+.block-about {
   margin-top: 3rem;
-  padding:1rem;
+  padding: 1rem;
 }
 
-footer{
-  background-color:#a6f6f1;
+footer {
+  background-color: #a6f6f1;
 }
-.copyright-text{
+.copyright-text {
   background-color: #41aea9;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: normal;
 
   color: #ffff;
-  text-align:center;
+  text-align: center;
 }
 /* 
 .carousel-item {

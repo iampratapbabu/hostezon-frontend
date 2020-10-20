@@ -1,16 +1,16 @@
 import React,{Fragment} from 'react'
+import Header from '../layout/Header';
 import Carousel from '../layout/Carousel';
-
-import About from './About';
+import About from '../layout/About';
 import Footer from '../layout/Footer';
 
 
 const Home =() => {
   return (
-    <Fragment>
-
-    <Carousel/>
+    <Fragment> 
+    <Header/>
     <div class="container">
+    <Carousel/>
     <About/>
     </div>
     <Footer/>
