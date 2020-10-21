@@ -1,4 +1,5 @@
 import React,{Fragment} from 'react';
+// import './about-style.css';
 import admin from '../../images/admin-img.jpeg';
 import Header from '../../../src/layout/Header';
 

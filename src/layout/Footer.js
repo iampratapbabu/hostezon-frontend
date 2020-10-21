@@ -4,7 +4,9 @@ import {Link} from 'react-router-dom';
 const Footer =() => {
   return (
     <Fragment>
-    <Link to='/about'><p class="copyright-text">Developed By - Tej Pratap</p></Link>
+    <div class="footer">
+    <Link to='/about'><p class = "footer-text">Developed By - Tej Pratap</p></Link>
+    </div>
     </Fragment>
   );
 }

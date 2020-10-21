@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 span {
   background-color: #3fc1c9;
   color: white;
@@ -22,6 +27,16 @@ h3 {
 p {
   font-family: "Poppins", sans-serif;
   padding: 0.2rem;
+}
+
+a:link {
+  text-decoration: none;
+  color: #ffff;
+}
+
+a:hover {
+  color: #ffff;
+  background-color: transparent;
 }
 
 Link {
@@ -70,20 +85,22 @@ Link {
 
 .block-about {
   margin-top: 3rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 
-footer {
-  background-color: #a6f6f1;
-}
-.copyright-text {
-  background-color: #41aea9;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-
-  color: #ffff;
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  color: white;
   text-align: center;
+  background-color: #41aea9;
 }
+.footer-text {
+  color: #ffff;
+}
+
 /* 
 .carousel-item {
   height: 400px;
