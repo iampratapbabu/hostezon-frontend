@@ -27,12 +27,12 @@ const Main =() => {
     <hr></hr>
     <h3>Technologies Used:</h3>
 
-    <p>Node.js and Express.js for Backend</p>
-     <p>React.js for Frontend</p>
-     <p>mongoDB for Database</p>
-     <p>MVC architecture</p>
-     <p>REST api for connecting Frontend and Backend</p>
-     <p>CSS and Bootstrap for Design</p>
+     <p>-> Node.js and Express.js for Backend</p>
+     <p>-> React.js for Frontend</p>
+     <p>-> mongoDB for Database</p>
+     <p>-> MVC architecture</p>
+     <p>-> REST api for connecting Frontend and Backend</p>
+     <p>-> CSS and Bootstrap for Design</p>
 
 
 

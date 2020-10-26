@@ -5,7 +5,7 @@ const Header =() => {
   return (
     <Fragment>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light transparent">
     <div class="container">
       <Link class="navbar-brand" to="/"><h4>hoste<span>ZON</span></h4></Link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,6 +24,9 @@ const Header =() => {
           </li>
           <li class="nav-item btn-margin">
             <Link class="nav-link" to="/shop">Shop</Link>
+          </li>
+          <li class="nav-item btn-margin">
+            <Link class="nav-link" to="/about">About</Link>
           </li>
         </ul>
       </div>
