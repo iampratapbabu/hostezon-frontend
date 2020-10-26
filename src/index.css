@@ -27,7 +27,7 @@ h2 {
   text-align: center;
 
   border-radius: 8px;
-  box-shadow: 1px 3px #3fc1c9;
+  box-shadow: 1px 3px 2px 2px #3fc1c9;
 }
 h4 {
   font-family: "Montserrat", sans-serif;
@@ -92,10 +92,10 @@ Link {
 
 .block-img {
   border-radius: 50%;
-  border: 3px solid #726a95;
+  border: 3px solid #3fc1c9;
   margin-top: 4rem;
   margin-left: 4rem;
-  box-shadow: 3px 7px #726a95;
+  box-shadow: 3px 7px #3fc1c9;
 }
 
 .block-about {

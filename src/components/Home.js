@@ -6,6 +6,7 @@ import Footer from '../layout/Footer';
 import Login from '../layout/Login';
 import Signup from '../layout/Signup';
 import Features from '../layout/Features';
+import Test from '../layout/Test';
 
 
 
@@ -14,6 +15,7 @@ const Home = () => {
     <Fragment> 
     <Header/>
     <div class="container">
+    <Test/>
     <Login/>
     <Signup/>
     <About/>

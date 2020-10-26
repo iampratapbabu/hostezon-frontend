@@ -12,7 +12,7 @@ const Header =() => {
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item btn-margin">
             <Link class="nav-link" to="/academics">Academics</Link>
           </li>
@@ -24,6 +24,9 @@ const Header =() => {
           </li>
           <li class="nav-item btn-margin">
             <Link class="nav-link" to="/shop">Shop</Link>
+          </li>
+          <li class="nav-item btn-margin">
+            <Link class="nav-link" to="/about">About</Link>
           </li>
         </ul>
       </div>
