@@ -45,9 +45,11 @@ class Academics extends Component {
     //This is used to make the output in grid style vey important
     const academicStyle={
         display:'grid',
-        gridTemplateColumns:'repeat(2 ,1fr)',
+        gridTemplateColumns:'repeat(1 ,1fr)',
         gridGap:'1rem'
-    }
+    }  
+    //repeat me value 1 ke jagah 2 krenge then ek row me 2 grid 
+    //jitna value change utna hi grid change
    
 
 export default Academics;
