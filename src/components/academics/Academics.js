@@ -13,7 +13,7 @@ class Academics extends Component {
          loading:true
      })
     const res = await axios.get('https://trishulatechnologies.com/hostezon/v1/academics/syllabus');
-        console.log(res.data.academics);
+        
         this.setState({
             loading:false,
             academics:res.data.academics
