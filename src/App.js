@@ -11,6 +11,7 @@ import Social from './components/social/Main';
 import Shop from './components/shop/Main';
 import About from './components/about/Main';
 import Signup from '../src/layout/Signup';
+import Test from '../src/layout/Test';
 import Error from './layout/Error';
 
 
@@ -28,6 +29,7 @@ const App =() => {
     <Route exact path='/social' component={Social} />
     <Route exact path='/shop' component={Shop} />
     <Route exact path='/about' component={About} />
+    <Route exact path='/test' component={Test} />
     <Route exact path='*' component={Error} />
     </Switch>
     

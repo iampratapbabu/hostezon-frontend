@@ -1,4 +1,6 @@
 import React,{Fragment} from 'react';
+
+import Academics from './Academics';
 import Header from './Header';
 import Footer from '../../../src/layout/Footer';
 
@@ -8,7 +10,7 @@ const Main = () => {
      
         <Header/>
         <div class = "container">
-         <h1>This is the academics part</h1>
+         <Academics/>
        </div>
        <Footer/>
         </Fragment>

@@ -6,7 +6,6 @@ import About from '../layout/About';
 import Footer from '../layout/Footer';
 import Login from '../layout/Login';
 import Features from '../layout/Features';
-import Test from '../layout/Test';
 
 
 
@@ -15,7 +14,7 @@ const Home = () => {
     <Fragment> 
     <Header/>
     <div class="container">
-    <Test/>
+   
     <Login/>
     <p>New To hosteZON <Link to = '/signup'>Signup</Link></p>
     <About/>
