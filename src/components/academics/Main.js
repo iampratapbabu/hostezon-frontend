@@ -11,6 +11,7 @@ const Main = () => {
      
         <Header/>
         <div class = "container">
+        <hr/>
          <Search/>
          <Academics/>
         </div>

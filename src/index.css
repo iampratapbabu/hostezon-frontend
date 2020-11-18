@@ -132,3 +132,11 @@ Link {
     left: 0;
     min-height: 300px;
 } */
+
+.span-admin {
+  display: inline;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+}

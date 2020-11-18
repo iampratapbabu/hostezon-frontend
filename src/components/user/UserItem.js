@@ -8,7 +8,7 @@ const UserItem = ({user}) =>{
             <div>
                 <h1>{user.name}</h1>
                 <hr/>
-                <h3>Role: {user.role}</h3>
+                <div className="span-admin">{user.role}</div> 
                 <h3>Email: {user.email}</h3>
                 
             </div>

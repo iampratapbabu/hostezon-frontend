@@ -8,6 +8,7 @@ const Main = () => {
         <Fragment>
         <Header/>
             <div className="container">
+            <hr/>
             <h2>All Users</h2>
             <hr/>
             <Users/>
