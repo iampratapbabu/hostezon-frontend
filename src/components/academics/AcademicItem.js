@@ -10,7 +10,7 @@ const AcademicItem = ({branch}) =>{
                 <hr/>
                 <h3>Year - {branch.year}</h3>
                 <h3>Semester - {branch.semester}</h3>
-                <a className = "btn btn-outline-dark mr-2" href={branch.syllabus}>click here for Syllabus</a>
+                <a className = "btn btn-info mb-2" href={branch.syllabus}>click here for Syllabus</a>
                 <a className = "btn btn-dark" href={branch.papers}>click here for Previous year papers</a>
             </div>
         </div>    
