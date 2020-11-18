@@ -2,7 +2,7 @@ import React,{Fragment} from 'react';
 
 import Academics from './Academics';
 import Search from './Search';
-import Header from './Header';
+import Header from '../../layout/Header';
 import Footer from '../../../src/layout/Footer';
 
 const Main = () => {
