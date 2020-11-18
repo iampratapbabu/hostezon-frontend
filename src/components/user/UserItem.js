@@ -6,10 +6,10 @@ const UserItem = ({user}) =>{
         <Fragment>
         <div class="shadow p-3 mb-5 bg-white rounded">
             <div>
-                <h1>{user.name}</h1>
+                <h4>{user.name}</h4>
                 <hr/>
                 <div className="span-admin">{user.role}</div> 
-                <h3>Email: {user.email}</h3>
+                <p>Email:{user.email}</p>
                 
             </div>
         </div>    
