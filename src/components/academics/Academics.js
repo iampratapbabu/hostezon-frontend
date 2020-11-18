@@ -1,7 +1,7 @@
 import React,{Fragment,Component} from "react";
 import axios from 'axios';
 import AcademiciItem from './AcademicItem';
-import Spinner from './Spinner';
+import Spinner from '../../animation/Spinner';
 
 class Academics extends Component {
     state={

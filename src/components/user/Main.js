@@ -8,7 +8,8 @@ const Main = () => {
         <Fragment>
         <Header/>
             <div className="container">
-            <h1>This is the user files</h1>
+            <h2>All Users</h2>
+            <hr/>
             <Users/>
             </div>
             
