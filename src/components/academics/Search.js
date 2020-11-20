@@ -3,10 +3,10 @@ import React,{Component,Fragment} from 'react'
 class Search extends Component {
 
     state={
-        branch:'',
+       
         year:'',
         semester:'',
-        value:'computer-science'
+        value:'null'
     }
 
     handleChange =(e) =>{
@@ -28,7 +28,7 @@ class Search extends Component {
         e.preventDefault();
         this.props.searchItem(this.state);
         this.setState({
-            branch:'',
+            
             year:'',
             semester:'',
             value:'null',
@@ -55,24 +55,18 @@ class Search extends Component {
             
              <div>
                  <form className="form" onSubmit={this.onSubmit}>
-                     <input type="text"
-                        name="branch" 
-                        className="form-control" 
-                        placeholder="Enter your branch"
-                        value={this.state.text}
-                        onChange={this.onchange}
-                      />
+                     
                       <input type="text"
                         name="year" 
                         className="form-control" 
-                        placeholder="Enter your Year"
+                        placeholder="Enter your Year like 1 or 2"
                         value={this.state.year}
                         onChange={this.onchange}
                       />
                       <input type="text"
                         name="semester" 
                         className="form-control" 
-                        placeholder="Enter your semester"
+                        placeholder="Enter your semester like 1 or 2"
                         value={this.state.semester}
                         onChange={this.onchange}
                       />
