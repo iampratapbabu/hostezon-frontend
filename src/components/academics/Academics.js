@@ -25,6 +25,7 @@ class Academics extends Component {
 //     }
    
 searchItem = async ({branch,year,semester,value}) =>{
+    this.setState({loading:true})
     
     const res = await axios.get(`https://trishulatechnologies.com/hostezon/v1/academics/${value}/${year}/${semester}`);
     
