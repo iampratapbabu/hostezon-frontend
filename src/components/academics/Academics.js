@@ -1,5 +1,7 @@
 import React,{Fragment,Component} from "react";
 import axios from 'axios';
+import Search from './Search';
+
 import AcademiciItem from './AcademicItem';
 import Spinner from '../../animation/Spinner';
 
@@ -8,30 +10,43 @@ class Academics extends Component {
         academics:[],
         loading:false
     }
- async componentDidMount(){
-     this.setState({
-         loading:true
-     })
-    const res = await axios.get('https://trishulatechnologies.com/hostezon/v1/academics/syllabus');
-        
-        this.setState({
-            loading:false,
-            academics:res.data.academics
-        });
-    }
-   
 
+//     //To load all the components
+//  async componentDidMount(){
+//      this.setState({
+//          loading:true
+//      })
+//     const res = await axios.get('https://trishulatechnologies.com/hostezon/v1/academics/syllabus');
+        
+//         this.setState({
+//             loading:false,
+//             academics:res.data.academics
+//         });
+//     }
+   
+searchItem = async ({branch,year,semester,value}) =>{
+    console.log(branch,year,semester,value);
+    const res = await axios.get(`https://trishulatechnologies.com/hostezon/v1/academics/${value}/${year}/${semester}`);
+    console.log(res.data.branch);
+   
+    this.setState({
+                    loading:false,
+                    academics:res.data.branch
+                });
+            
+}
 
 
     render(){
         if (this.state.loading) return <Spinner />;
         return (
             <Fragment>
+            <Search searchItem={this.searchItem} />
               
                 <div style={academicStyle}>
                 
                 {this.state.academics.map(branch =>(
-                    <AcademiciItem key={branch.id} branch={branch} />
+                    <AcademiciItem key={branch._id} branch={branch} />
                     
                    
                 ))}

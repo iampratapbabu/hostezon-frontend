@@ -2,11 +2,14 @@ import React,{Fragment} from "react";
 import PropTypes from 'prop-types';
 
 const AcademicItem = ({branch}) =>{
+
+    const name = branch.branch;
+
     return (
         <Fragment>
         <div class="shadow p-3 mb-5 bg-white rounded">
             <div>
-                <h1>{branch.branch}</h1>
+                <h1>{name.toUpperCase()}</h1>
                 <hr/>
                 <h3>Year - {branch.year}</h3>
                 <h3>Semester - {branch.semester}</h3>
