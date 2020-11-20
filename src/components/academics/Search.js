@@ -38,7 +38,7 @@ class Search extends Component {
     render(){
         return (
             <Fragment>
-                <form className="form" onSubmit={this.onSubmit}>
+                
                 <label for="item">Choose your Branch</label>
                 <select className="ml-2" id="cars" name="cars" onChange={this.handleChange}>
                 <option value="null">select</option>
@@ -49,9 +49,9 @@ class Search extends Component {
                 <option value="electronics-engineering">Electronics & Communication</option>
                 <option value="information-technology">Information Technology</option>
                 </select>
+                
             
-                <input className="btn btn-dark btn-sm ml-2" type="submit"/>
-                </form>
+                
             
              <div>
                  <form className="form" onSubmit={this.onSubmit}>
