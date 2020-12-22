@@ -2,6 +2,12 @@ import React,{Fragment} from 'react';
 import { Route,Switch } from "react-router-dom";
 
 
+//Context api files
+//blogs context
+import BlogsState from './context/blogs/BlogsState';
+
+
+
 
 
 import Home from './components/Home';
@@ -14,12 +20,14 @@ import Signup from '../src/layout/Signup';
 import Users from './components/user/Main';
 import Test from '../src/layout/Test';
 import Error from './layout/Error';
+import BlogsContext from './context/blogs/BlogsContext';
 
 
 
 
 const App =() => {
   return (
+    <BlogsState>
     <Fragment>
     
     <Switch>
@@ -38,6 +46,7 @@ const App =() => {
     
   
     </Fragment>
+    </BlogsState>
   );
 }
 

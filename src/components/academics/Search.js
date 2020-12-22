@@ -40,8 +40,8 @@ class Search extends Component {
             <Fragment>
                 
                 <label for="item">Choose your Branch</label>
-                <select className="ml-2" id="cars" name="cars" onChange={this.handleChange}>
-                <option value="null">select</option>
+                <select className="ml-2" id="branches" name="branchs" onChange={this.handleChange}>
+                <option value="null">Select</option>
                 <option value="computer-science">Computer Science</option>
                 <option value="civil-engineering">Civil Engineering</option>
                 <option value="mechanical-engineering">Mechanical Engineering</option>

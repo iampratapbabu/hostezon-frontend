@@ -1,6 +1,7 @@
 import React,{Fragment,Component} from 'react';
 import axios from 'axios';
 
+
 import Spinner from '../../animation/Spinner';
 
 
@@ -12,12 +13,12 @@ class Users extends Component{
         users:[],
         loading:false
     }
-
+    
     async componentDidMount(){
         this.setState({
             loading:true
         })
-       const res = await axios.get('https://trishulatechnologies.com/hostezon/v1/users');
+       const res = await axios.get(`${process.env.REACT_APP_URL}/hostezon/v1/users`);
            
            this.setState({
                loading:false,
@@ -28,6 +29,7 @@ class Users extends Component{
 
 
     render(){
+        // console.log(process.env.REACT_APP_URL);
         if (this.state.loading) return <Spinner />;
         return (
             <Fragment>
