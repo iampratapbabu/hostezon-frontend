@@ -11,7 +11,7 @@ const Main = () => {
      
         <Header/>
         <div class = "container">
-         <h1>This is the Blogs Main Page</h1>
+         <hr/>
          <Blogs/>
        </div>
        <Footer/>

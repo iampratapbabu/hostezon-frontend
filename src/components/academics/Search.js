@@ -6,12 +6,28 @@ class Search extends Component {
        
         year:'',
         semester:'',
-        value:'null'
+        branchName:null,
+        branchYear:null,
+        branchSemester:null
     }
 
-    handleChange =(e) =>{
+    handleChangeName =(e) =>{
         this.setState({
-            value:e.target.value
+            branchName:e.target.value
+        });
+    }
+
+    handleChangeYear =(e) =>{
+        this.setState({
+            
+            branchYear:e.target.value
+        });
+    }
+
+    handleChangeSemester =(e) =>{
+        this.setState({
+            
+            branchSemester:e.target.value
         });
     }
 
@@ -28,10 +44,12 @@ class Search extends Component {
         e.preventDefault();
         this.props.searchItem(this.state);
         this.setState({
-            
             year:'',
-            semester:'',
-            value:'null',
+        semester:'',
+        branchName:null,
+        branchYear:null,
+        branchSemester:null
+           
         });
     }
 
@@ -40,7 +58,7 @@ class Search extends Component {
             <Fragment>
                 
                 <label for="item">Choose your Branch</label>
-                <select className="ml-2" id="branches" name="branchs" onChange={this.handleChange}>
+                <select className="ml-2" id="branches" name="branchs" onChange={this.handleChangeName}>
                 <option value="null">Select</option>
                 <option value="computer-science">Computer Science</option>
                 <option value="civil-engineering">Civil Engineering</option>
@@ -49,11 +67,37 @@ class Search extends Component {
                 <option value="electronics-engineering">Electronics & Communication</option>
                 <option value="information-technology">Information Technology</option>
                 </select>
+
+
+                <label for="item">Choose your year</label>
+                <select className="ml-2" id="year" name="year" onChange={this.handleChangeYear}>
+                <option value="null">Select</option>
+                <option value="1">First Year</option>
+                <option value="2">Second year</option>
+                <option value="3">Third Year</option>
+                <option value="4">Final year</option>            
+                </select>
+
+                <label for="item">Choose your Semester</label>
+                <select className="ml-2" id="year" name="year" onChange={this.handleChangeSemester}>
+                <option value="null">Select</option>
+                <option value="1">First Semester</option>
+                <option value="2">Second Semester</option>
+                <option value="3">Third Semester</option>
+                <option value="4">Fourth Semester</option>
+                <option value="5">Fifth Semester</option>
+                <option value="6">Sixth Semester</option>
+                <option value="7">Seventh Semester</option>
+                <option value="8">Last Semester</option>
+                               
+                </select>
                 
             
                 
-            
-             <div>
+            {
+                /*
+                purana wala form type krne wala
+                     <div>
                  <form className="form" onSubmit={this.onSubmit}>
                      
                       <input type="text"
@@ -73,7 +117,10 @@ class Search extends Component {
                      <input type = "submit" value="search" className="btn btn-dark mt-3 mb-3"/>
                  </form>
              </div>
-             <hr/>
+             
+                */
+            }
+            <hr/>
             </Fragment>
         )
     }

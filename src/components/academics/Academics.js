@@ -24,10 +24,10 @@ class Academics extends Component {
 //         });
 //     }
    
-searchItem = async ({branch,year,semester,value}) =>{
+searchItem = async ({branch,year,semester,branchName,branchYear,branchSemester}) =>{
     this.setState({loading:true})
     
-    const res = await axios.get(`${process.env.REACT_APP_URL}/hostezon/v1/academics/${value}/${year}/${semester}`);
+    const res = await axios.get(`${process.env.REACT_APP_URL}/hostezon/v1/academics/${branchName}/${branchYear}/${branchSemester}`);
     
    
     this.setState({

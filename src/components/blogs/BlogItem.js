@@ -8,7 +8,7 @@ const BlogItem = ({blog}) => {
         <Fragment>
         <div class="shadow p-3 mb-5 bg-white rounded">
             <div>
-                <h1>{title.toUpperCase()}</h1>
+                <h2>{title.charAt(0).toUpperCase()+title.slice(1)}</h2>
                 <hr/>
                 <h3>category{' - '} <span className={'badge '+(category === 'Tech'?'badge-success':'badge-primary')}>{category}</span></h3>
                 <hr/>
