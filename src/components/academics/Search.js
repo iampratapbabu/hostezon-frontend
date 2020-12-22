@@ -57,9 +57,10 @@ class Search extends Component {
         return (
             <Fragment>
                 <form onSubmit={this.onSubmit}>
-                <label for="item">Choose your Branch</label>
+                
+                {/* <label for="item">Choose your Branch</label> */}
                 <select className="ml-2" id="branches" name="branchs" onChange={this.handleChangeName}>
-                <option value="null">Select</option>
+                <option value="null">Select Your Branch</option>
                 <option value="computer-science">Computer Science</option>
                 <option value="civil-engineering">Civil Engineering</option>
                 <option value="mechanical-engineering">Mechanical Engineering</option>
@@ -69,18 +70,18 @@ class Search extends Component {
                 </select>
 
 
-                <label for="item">Choose your year</label>
+                {/* <label for="item">Choose your year</label> */}
                 <select className="ml-2" id="year" name="year" onChange={this.handleChangeYear}>
-                <option value="null">Select</option>
+                <option value="null">Select Your Year</option>
                 <option value="1">First Year</option>
                 <option value="2">Second year</option>
                 <option value="3">Third Year</option>
                 <option value="4">Final year</option>            
                 </select>
 
-                <label for="item">Choose your Semester</label>
+                {/* <label for="item">Choose your Semester</label> */}
                 <select className="ml-2" id="year" name="year" onChange={this.handleChangeSemester}>
-                <option value="null">Select</option>
+                <option value="null">Select Your Semester</option>
                 <option value="1">First Semester</option>
                 <option value="2">Second Semester</option>
                 <option value="3">Third Semester</option>
