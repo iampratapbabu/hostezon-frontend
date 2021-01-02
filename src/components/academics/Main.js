@@ -1,7 +1,7 @@
 import React,{Fragment} from 'react';
 
 import Academics from './Academics';
-import Header from '../../layout/Header';
+import Header from './Header';
 import Footer from '../../../src/layout/Footer';
 
 const Main = () => {

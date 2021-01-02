@@ -31,9 +31,7 @@ const Header =() => {
           <li class="nav-item btn-margin">
             <Link class="nav-link" to="/about">About</Link>
           </li>
-          <li class="nav-item btn-margin">
-            <Link class="nav-link" to="/test">Test</Link>
-          </li>
+          
         </ul>
       </div>
         </div>

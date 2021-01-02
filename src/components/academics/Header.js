@@ -13,9 +13,10 @@ const Header =() => {
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item btn-margin">
-            <Link class="nav-link" to="/academics">Academics</Link>
+        <li class="nav-item btn-margin">
+            <Link class="nav-link" to="/">Home</Link>
           </li>
+          
           <li class="nav-item">
             <Link class="nav-link btn-margin" to="/blogs">Blogs</Link>
           </li>
@@ -28,6 +29,9 @@ const Header =() => {
           <li class="nav-item btn-margin">
             <Link class="nav-link" to="/about">About</Link>
           </li>
+
+         
+
         </ul>
       </div>
         </div>

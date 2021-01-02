@@ -12,7 +12,7 @@ class Academics extends Component {
     }
 
 //     //To load all the components
-//  async componentDidMount(){
+//    async componentDidMount(){
 //      this.setState({
 //          loading:true
 //      })
