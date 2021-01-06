@@ -18,7 +18,7 @@ span {
   padding: 2px;
 }
 
-h2 {
+h1 h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   padding-left: 1rem;
@@ -139,4 +139,9 @@ Link {
   color: white;
   border-radius: 5px;
   padding: 2px;
+}
+
+.icon-home {
+  margin-right: 1rem;
+  color: #41aea9;
 }
