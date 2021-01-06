@@ -1,6 +1,6 @@
 import React,{Fragment} from 'react';
 
-import Header from '../../layout/Header';
+import Header from './Header';
 import Footer from '../../../src/layout/Footer';
 
 const Main = () => {

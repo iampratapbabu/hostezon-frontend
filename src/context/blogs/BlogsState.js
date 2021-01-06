@@ -1,5 +1,5 @@
 import React,{useReducer} from 'react';
-import uuid from 'uuid';
+import * as uuid from 'uuid';
 import BlogsContext from './BlogsContext';
 import BlogsReducer from './BlogsReducer';
 
@@ -19,35 +19,9 @@ import {
 const BlogsState = (props) =>{
     const initialState ={
         blogs:[
-            {
-            "id":1,
-            "views": 625,
-            "rating": 9,
-            "title": "My Twelth Blog Post",
-            "slug": "my-twelth-blog-post",
-            "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
-            "category": "Tech"
-          },
+            
           {
-            "id":2,
-            "views": 625,
-            "rating": 9,
-            "title": "My Thirteen Blog Post",
-            "slug": "my-thirteen-blog-post",
-            "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
-            "category": "Tech"
-          },
-          {
-            "id":3,
-            "views": 625,
-            "rating": 9,
-            "title": "My Fourteen Blog Post",
-            "slug": "my-fourteen-blog-post",
-            "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
-            "category": "Tech"
-          },
-          {
-            "_id": {
+            "id": {
               "$oid": "5f899de21444225f503765c6"
             },
             "views": 425,
@@ -57,7 +31,7 @@ const BlogsState = (props) =>{
             "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
             "category": "Non-Tech"
           },{
-            "_id": {
+            "id": {
               "$oid": "5f8d842b6b73fe95dcae057e"
             },
             "views": 425,
@@ -67,7 +41,7 @@ const BlogsState = (props) =>{
             "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
             "category": "Non-Tech"
           },{
-            "_id": {
+            "id": {
               "$oid": "5f9000e12993178f98e22677"
             },
             "views": 425,
@@ -77,7 +51,7 @@ const BlogsState = (props) =>{
             "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
             "category": "Non-Tech"
           },{
-            "_id": {
+            "id": {
               "$oid": "5f90016cb7e07a1c5ce708e8"
             },
             "views": 425,
@@ -87,7 +61,7 @@ const BlogsState = (props) =>{
             "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
             "category": "Tech"
           },{
-            "_id": {
+            "id": {
               "$oid": "5f9169e4987d14585cedfc9d"
             },
             "views": 425,
@@ -97,7 +71,7 @@ const BlogsState = (props) =>{
             "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
             "category": "Non-Tech"
           },{
-            "_id": {
+            "id": {
               "$oid": "5fad6fc2534a2d2f60501ff8"
             },
             "views": 400,
@@ -116,8 +90,16 @@ const BlogsState = (props) =>{
 
 //     ADD_BLOG,
 
+const addBlog = (blog) =>{
+  blog.id = uuid.v4();
+  dispatch({type:ADD_BLOG,payload:blog});
+};
 
 //  DELETE_BLOG,
+
+const deleteBlog = (id) =>{
+  dispatch({type:DELETE_BLOG,payload:id});
+};
 
 
 //  SET_BLOG, 
@@ -137,7 +119,9 @@ const BlogsState = (props) =>{
  return(
      <BlogsContext.Provider
      value={{
-         blogs:state.blogs
+         blogs:state.blogs,
+         addBlog,
+         deleteBlog
          }}>
          {props.children}
      </BlogsContext.Provider>

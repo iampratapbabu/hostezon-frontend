@@ -1,6 +1,7 @@
 import React,{Fragment} from 'react';
 import Blogs from './Blogs';
 import Header from './Header';
+ 
 import Footer from '../../../src/layout/Footer';
 
 

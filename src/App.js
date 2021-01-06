@@ -18,7 +18,12 @@ import Shop from './components/shop/Main';
 import About from './components/about/Main';
 import Signup from '../src/layout/Signup';
 import Users from './components/user/Main';
+import Firebase from './components/firebase/Main';
 import Error from './layout/Error';
+
+//subcomponents
+import BlogForm from './components/blogs/BlogForm';
+
 
 
 
@@ -40,6 +45,8 @@ const App =() => {
     <Route exact path='/shop' component={Shop} />
     <Route exact path='/users' component={Users} />
     <Route exact path='/about' component={About} />
+    <Route exact path='/firebase' component={Firebase} />
+    <Route exact path="/create-blog" component={BlogForm} />
     
     <Route exact path='*' component={Error} />
     </Switch>

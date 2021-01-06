@@ -28,6 +28,9 @@ const Header =() => {
           <li class="nav-item btn-margin">
             <Link class="nav-link" to="/about">About</Link>
           </li>
+          <li class="nav-item btn-margin">
+            <Link class="nav-link" to="/">Back to Home</Link>
+          </li>
         </ul>
       </div>
         </div>
