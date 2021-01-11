@@ -4,6 +4,8 @@ import admin from '../../images/admin-img.jpeg';
 import Header from '../../../src/layout/Header';
 
 import Footer from '../../../src/layout/Footer';
+import About from './About';
+import Features from './Features';
 
 
 const Main =() => {
@@ -35,10 +37,15 @@ const Main =() => {
      <p>-> CSS and Bootstrap for Design</p>
 
 
-
+     
     </div>
+    <div class="container">
+    <About/>
+    <Features/>
     </div>
-
+    
+    </div>
+    
     
     <Footer/>
     </Fragment>

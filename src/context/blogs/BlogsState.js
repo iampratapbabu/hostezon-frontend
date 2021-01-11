@@ -6,7 +6,7 @@ import BlogsReducer from './BlogsReducer';
 import {
  ADD_BLOG,
  DELETE_BLOG,
- SET_BLOG, 
+ SET_CURRENT_BLOG, 
  CLEAR_BLOG, 
  UPDATE_BLOG, 
  FILTER_BLOGS, 
@@ -21,68 +21,35 @@ const BlogsState = (props) =>{
         blogs:[
             
           {
-            "id": {
-              "$oid": "5f899de21444225f503765c6"
-            },
+            "id": "5f899de21444225f503765c6",
+            
             "views": 425,
-            "rating": 5,
+            "rating": 4.5,
             "title": "My Fifteen Blog Post",
             "slug": "my-fifteen-blog-post",
             "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
-            "category": "Non-Tech"
+            "category": "Tech"
           },{
-            "id": {
-              "$oid": "5f8d842b6b73fe95dcae057e"
-            },
+            "id":"5f8d842b6b73fe95dcae057e",
             "views": 425,
-            "rating": 5,
+            "rating": 4.0,
             "title": "My Sixteen Blog Post",
             "slug": "my-sixteen-blog-post",
             "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
             "category": "Non-Tech"
           },{
-            "id": {
-              "$oid": "5f9000e12993178f98e22677"
-            },
+            "id":"5f9000e12993178f98e22677",
+            
             "views": 425,
             "rating": 5,
             "title": "My Seventeen Blog Post",
             "slug": "my-seventeen-blog-post",
             "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
-            "category": "Non-Tech"
-          },{
-            "id": {
-              "$oid": "5f90016cb7e07a1c5ce708e8"
-            },
-            "views": 425,
-            "rating": 5,
-            "title": "My Eighteen Blog Post",
-            "slug": "my-eighteen-blog-post",
-            "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
-            "category": "Tech"
-          },{
-            "id": {
-              "$oid": "5f9169e4987d14585cedfc9d"
-            },
-            "views": 425,
-            "rating": 5,
-            "title": "My Ninteen Blog Post",
-            "slug": "my-ninteen-blog-post",
-            "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
-            "category": "Non-Tech"
-          },{
-            "id": {
-              "$oid": "5fad6fc2534a2d2f60501ff8"
-            },
-            "views": 400,
-            "rating": 4,
-            "title": "My Twenty Blog Post",
-            "slug": "my-twenty-blog-post",
-            "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
-            "category": "Non-Tech"
+            "category": "Confess"
           }
-            
-        ]
+        ],
+        current:null,
+        filtered:null
             
     };
 
@@ -102,26 +69,46 @@ const deleteBlog = (id) =>{
 };
 
 
-//  SET_BLOG, 
+//  SET_CURRENT_BLOG, 
+const setCurrentBlog = blog =>{
+  dispatch({type:SET_CURRENT_BLOG,payload:blog});
+};
 
 
 //  CLEAR_BLOG, 
+const clearBlog = blog =>{
+  dispatch({type:CLEAR_BLOG,payload:blog});
+};
 
 
 //  UPDATE_BLOG, 
-
+const updateBlog = blog =>{
+  dispatch({type:UPDATE_BLOG,payload:blog});
+};
 
 //  FILTER_BLOGS, 
-
+const filterBlog = text =>{
+  dispatch({type:FILTER_BLOGS,payload:text});
+};
 
 //  CLEAR_FILTER, 
+const clearFilter = blog =>{
+  dispatch({type:CLEAR_FILTER});
+}
 
  return(
      <BlogsContext.Provider
      value={{
          blogs:state.blogs,
+         current:state.current,
+         filtered:state.filtered,
          addBlog,
-         deleteBlog
+         deleteBlog,
+         setCurrentBlog,
+         updateBlog,
+         clearBlog,
+         filterBlog,
+         clearFilter
          }}>
          {props.children}
      </BlogsContext.Provider>

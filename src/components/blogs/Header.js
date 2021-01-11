@@ -14,9 +14,7 @@ const Header =() => {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           
-          <li class="nav-item">
-            <Link class="btn btn-primary" to="/create-blog">Create Blog</Link>
-          </li>
+          
           
           <li class="nav-item btn-margin">
             <Link class="nav-link" to="/about">About</Link>

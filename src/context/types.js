@@ -2,7 +2,7 @@
 
 export const ADD_BLOG = 'ADD_BLOG';
 export const DELETE_BLOG = 'DELETE_BLOG';
-export const SET_BLOG = 'SET_BLOG';
+export const SET_CURRENT_BLOG = 'SET_BLOG';
 export const CLEAR_BLOG = 'CLEAR_BLOG';
 export const UPDATE_BLOG = 'UPDATE_BLOG';
 export const FILTER_BLOGS = 'FILTER_BLOG';

@@ -15,20 +15,20 @@ const Features = () => {
 
            <div class="shadow p-3 mb-5 bg-white rounded col-sm-6">
            <h3><i class="fas fa-book-open icon-home"></i><span>Academics</span></h3>
-           <p>Write Your Thoughts share with all. choose between three categories
-           Tech, Non-Tech or Confess. Write some useful content to Help Others.</p>
+           <p>Find All the Syllabus and study material to boost your Academics.
+           As well as you will also get previous year papers of all subjets. to understand
+           the Questions Pattern.</p>
            </div>
 
            <div class="shadow p-3 mb-5 bg-white rounded col-sm-6">
            <h3><i class="fas fa-users icon-home"></i><span>Social</span></h3>
-           <p>Write Your Thoughts share with all. choose between three categories
-           Tech, Non-Tech or Confess. Write some useful content to Help Others.</p>
+           <p>This is useful to connect all the students and share their views
+           and opiniions </p>
            </div>
 
            <div class="shadow p-3 mb-5 bg-white rounded col-sm-6">
            <h3><i class="fas fa-shopping-cart icon-home"></i><span>Shop</span></h3>
-           <p>Write Your Thoughts share with all. choose between three categories
-           Tech, Non-Tech or Confess. Write some useful content to Help Others.</p>
+           <p>An e-Commerce portal to sell the used goods to other hostelers :</p>
            </div>
 
            </div>

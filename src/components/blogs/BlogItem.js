@@ -4,9 +4,11 @@ import BlogsContext from '../../context/blogs/BlogsContext'
 const BlogItem = ({blog}) => {
 
     const blogsContext = useContext(BlogsContext);
-    const {title,category,body,id} = blog;
+    const {setCurrentBlog,clearBlog} = blogsContext;
+    const {title,category,body,id,rating} = blog;
     const onDelete = ()=>{
         blogsContext.deleteBlog(id);
+        clearBlog();
     };
     return (
         <Fragment>
@@ -15,11 +17,13 @@ const BlogItem = ({blog}) => {
                 <h2>{title.charAt(0).toUpperCase()+title.slice(1)}</h2>
                 <hr/>
                 <h3>category{' - '} <span className={'badge '+(category === 'Tech'?'badge-success':'badge-primary')}>{category}</span></h3>
+                <p>Rating:{' '}{rating}/5</p>
+
                 <hr/>
                 <h4> {body}</h4>
                 <hr/>
                 <h5>Written by:{}</h5>
-                <button className="btn btn-dark" >Edit</button>
+                <button className="btn btn-dark mr-1" onClick={()=>setCurrentBlog(blog)} >Edit</button>
                 <button className="btn btn-danger" onClick={onDelete}>Delete</button>
                 
                 </div>

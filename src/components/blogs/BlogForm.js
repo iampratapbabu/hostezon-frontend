@@ -1,10 +1,24 @@
-import React,{Fragment,useState,useContext} from 'react'
+import React,{Fragment,useState,useEffect,useContext} from 'react'
 import BlogsContext from '../../context/blogs/BlogsContext';
+import { UPDATE_BLOG } from '../../context/types';
 
-import Header from './Header';
 
 const BlogForm = () => {
     const blogsContext=useContext(BlogsContext);
+    const{addBlog,current,clearBlog,updateBlog}  = blogsContext;
+    
+    useEffect(() => {
+        if(current !== null){
+            setBlog(current);
+        }else{
+            setBlog({
+                title:"",
+                body:"",
+                category:"Tech"
+            });
+        }
+        
+    }, [blogsContext,current]);
 
 
     const [blog, setBlog] = useState({
@@ -21,20 +35,33 @@ const BlogForm = () => {
 
     const onSubmit = (e) =>{
         e.preventDefault();
-        blogsContext.addBlog(blog);
-        console.log(blog);
+        if(current == null){
+            addBlog(blog);
+        }else{
+            updateBlog(blog);
+            clearBlog();
+            
+        }
         setBlog({
             title:"",
             body:"",
             category:"Tech"
         });
-    }
+        
+        
+       
+    };
+
+    const clearAll = (blog) =>{
+        clearBlog(blog);
+       
+    };
 
     return (
         <Fragment>
-        <Header/>
+        
             <div class="container">
-            <h2>Create New Blog</h2>
+            <h2>{current ? 'Edit Blog':'Create New Blog'}</h2>
 
 
             <div className="form-group">
@@ -47,8 +74,9 @@ const BlogForm = () => {
                 value={title} 
                 onChange={onChange} />
 
-                <h5>Category</h5>
+                <h5 className="mt-3">Category</h5>
                 <input type="radio"
+                className="mr-1"
                 name="category"
                 value="Tech"
                 onChange={onChange}
@@ -57,6 +85,7 @@ const BlogForm = () => {
 
                 
                 <input type="radio"
+                className="mr-1"
                 name="category"
                 value="Non-Tech"
                 onChange={onChange}
@@ -65,6 +94,7 @@ const BlogForm = () => {
 
                 
                 <input type="radio"
+                className="mr-1"
                 name="category"
                 value="Confess"
                 onChange={onChange}
@@ -73,7 +103,7 @@ const BlogForm = () => {
 
                 
                 <textarea 
-                className="form-control" 
+                className="form-control mt-3" 
                 type="text" 
                 placeholder="Write Here..." 
                 name="body" 
@@ -81,8 +111,8 @@ const BlogForm = () => {
                 onChange={onChange} />
 
                 <input type="submit"
-                value = "Add Blog"
-                className="btn btn-primary"/>
+                value = {current?'Submit':'Add Blog'}
+                className="btn btn-primary mt-2"/>
                
 
 
@@ -90,6 +120,13 @@ const BlogForm = () => {
 
             </form>
             </div>
+            {current &&(
+                <div>
+                <button className = "btn btn-secondary"
+                onClick={clearAll}>Clear</button>
+
+                </div>
+            )}
             </div>
         </Fragment>
         
