@@ -37,8 +37,20 @@ import {
                 return{
                     ...state,
                     current:null
-                };       
-                
+                };
+            case FILTER_BLOGS:
+                return{
+                    filtered:state.blogs.filter(blog =>{
+                        const regex = new RegExp(`${action.payload}`,'gi');
+                        return blog.title.match(regex) || blog.body.match(regex);
+                    })
+                };
+            case CLEAR_FILTER:
+                return{
+                    ...state,
+                    filtered:null
+                };
+   
           default:
               return state;         
        }

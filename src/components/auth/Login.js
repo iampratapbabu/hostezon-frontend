@@ -1,32 +1,46 @@
-import React, { Fragment } from 'react';
+import React, { Fragment,useState } from 'react';
 import Header from '../../layout/Header';
+import {Link} from 'react-router-dom';
 
-const Login = () => {
+const Signup = () => {
+
+  const [user,setUser] = useState({
+    
+    email:'',
+    password:''
+  });
+
+  const {email,password} = user;
+
+  const onChange = e =>setUser({...user,[e.target.name]:e.target.value});
+  const onSubmit = (e) =>{
+    e.preventDefault();
+    console.log("submit");
+  }
+
     return (
         <Fragment>
         <Header/>
-        <div className="container">
-
-        <div className="form-decoration">
-        <h4>Login</h4>
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="Email"/>
-           
-        </div>
-        <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
-        
-        <button type="submit" className ="btn btn-dark mt-2">Submit</button>
-        </div>
-
-        </div>
+      <div className="container">
+      <h1>Account Login</h1>
+      <form onSubmit={onSubmit}>
+          
+            <div class="form-group">
+            <input type="email" class="form-control" name='email' value={email} onChange={onChange} placeholder="Enter Your Email"/>
+            </div>
        
-  
+          <div class="form-group">
+          <input type="password" class="form-control" name='password' value={password} onChange={onChange} placeholder="Enter Password"/>
+          </div>
+          
 
+            <input type="submit" value="LogIn" className="btn btn-secondary"/>
+            </form>
+            <Link to='/signup'>Signup</Link>
         </div>
-           
+      
         </Fragment>
     )
 }
 
-export default Login;
+export default Signup;

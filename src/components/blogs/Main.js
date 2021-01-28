@@ -1,8 +1,11 @@
 import React,{Fragment} from 'react';
 import Blogs from './Blogs';
-import Header from './Header';
- import BlogForm from './BlogForm';
+import Header from '../../layout/Header';
+
+import BlogForm from './BlogForm';
+ import Search from './Search';
 import Footer from '../../../src/layout/Footer';
+
 
 
 
@@ -15,6 +18,8 @@ const Main = () => {
          <hr/>
          
          <BlogForm/>
+         <hr/>
+         <Search/>
          <hr/>
          <Blogs/>
        </div>

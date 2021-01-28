@@ -147,9 +147,8 @@ Link {
 }
 
 .form-decoration {
-  border-style: solid;
-  border-width: 5px;
-  border-color: grey;
+  border: 2px solid grey;
+
   border-radius: 5px;
   padding: 2em;
   margin-top: 10%;
