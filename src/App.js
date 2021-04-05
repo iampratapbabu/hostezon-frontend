@@ -16,7 +16,6 @@ import Academics from './components/academics/Main';
 import Blogs from './components/blogs/Main';
 import About from './components/about/Main';
 import Users from './components/user/Main';
-import Firebase from './components/firebase/Main';
 import Error from './layout/Error';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
@@ -46,7 +45,6 @@ const App =() => {
    
     <Route exact path='/users' component={Users} />
     <Route exact path='/about' component={About} />
-    <Route exact path='/firebase' component={Firebase} />
     <Route exact path='/signup' component={Signup} />
     
     <Route exact path='*' component={Error} />

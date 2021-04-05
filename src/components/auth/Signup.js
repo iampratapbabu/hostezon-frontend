@@ -1,10 +1,14 @@
 import React, { Fragment,useState,useContext } from 'react';
 import AlertContext from '../../context/alert/AlertContext';
+import AuthContext from '../../context/auth/AuthContext';
+
 import Header from '../../layout/Header';
 
 const Signup = () => {
 const alertContext = useContext(AlertContext);
+const authContext = useContext(AuthContext);
 const {setAlert} = alertContext;
+const {register} = authContext;
 
   const [user,setUser] = useState({
     username:'',
@@ -23,11 +27,18 @@ const {setAlert} = alertContext;
     if(username==='' || email==='' || password ===''){
       // setAlert('Please Fill all the fields','danger');
       console.log("please fill all the fields");
+      
     }else if(password !== passwordConfirm){
       // setAlert("Password do not match","secondary");
       console.log("password do not match");
     }else{
-      console.log("after alert passed submit");
+      console.log("final submit");
+      register({
+        username,
+        email,
+        password,
+        passwordConfirm
+      });
     }
   };
 
