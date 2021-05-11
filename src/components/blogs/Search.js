@@ -1,22 +1,30 @@
-import React,{Fragment,useContext,useState,useEffect} from 'react'
+import React,{Fragment,useContext,useState,useEffect,useRef} from 'react'
 import BlogsContext from '../../context/blogs/BlogsContext'
 
 const Search = () => {
-
+    const text = useRef('');
     const blogsContext = useContext(BlogsContext);
-    const [text,setText] = useState('');
+    
+    const {filtered,filterBlog,clearFilter} = blogsContext;
 
+    useEffect(()=>{
+        if(filtered === null)
+            text.current.value='';
+    });
    
 
     const onChange = (e) =>{
-        console.log("button clicked");
+        if(text.current.value !== '')
+            filterBlog(e.target.value);
+        else
+            clearFilter();
     };
 
     return (
         <Fragment>
             <div>
              <form>
-                 <input type ="text" name="text" value={text}
+                 <input ref={text} type ="text" name="text" value={text}
                  placeholder="Search Blogs"
                  onChange={onChange} />
 

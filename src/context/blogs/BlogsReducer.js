@@ -40,6 +40,7 @@ import {
                 };
             case FILTER_BLOGS:
                 return{
+                    ...state,
                     filtered:state.blogs.filter(blog =>{
                         const regex = new RegExp(`${action.payload}`,'gi');
                         return blog.title.match(regex) || blog.body.match(regex);

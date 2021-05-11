@@ -29,7 +29,8 @@ const BlogsState = (props) =>{
             "slug": "my-fifteen-blog-post",
             "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
             "category": "Tech"
-          },{
+          },
+          {
             "id":"5f8d842b6b73fe95dcae057e",
             "views": 425,
             "rating": 4.0,
@@ -37,7 +38,8 @@ const BlogsState = (props) =>{
             "slug": "my-sixteen-blog-post",
             "body": "This is the content of my first blog that i have created through postmn by using my own api to interatct with database",
             "category": "Non-Tech"
-          },{
+          },
+          {
             "id":"5f9000e12993178f98e22677",
             
             "views": 425,
@@ -49,21 +51,18 @@ const BlogsState = (props) =>{
           }
         ],
         current:null,
-        filtered:null
-            
+        filtered:null    
     };
 
     const [state,dispatch] = useReducer(BlogsReducer,initialState);
 
 //     ADD_BLOG,
-
 const addBlog = (blog) =>{
   blog.id = uuid.v4();
   dispatch({type:ADD_BLOG,payload:blog});
 };
 
 //  DELETE_BLOG,
-
 const deleteBlog = (id) =>{
   dispatch({type:DELETE_BLOG,payload:id});
 };
@@ -94,7 +93,7 @@ const filterBlog = text =>{
 //  CLEAR_FILTER, 
 const clearFilter = blog =>{
   dispatch({type:CLEAR_FILTER});
-}
+};
 
  return(
      <BlogsContext.Provider

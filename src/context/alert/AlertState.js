@@ -14,18 +14,31 @@ const AlertState = (props) =>{
     //set alert
     const setAlert = (msg,type,timeout=5000) =>{
         const id = uuid.v4();
+        console.log(id,"This is running inside setAlert");
+        console.log(msg);
         dispatch({
             type:SET_ALERT,
+            
             payload:{msg,type,id}
         });
         setTimeout(() => dispatch({type:REMOVE_ALERT,payload:id}),timeout);
     };
 
+    //test function
+    const testFunction = () =>{
+        console.log("Test fucntion is running in alertstate");
+    }
+
+    //remove alert
+    const removeAlert = () => console.log("alert removed");
+
     return(
         <AlertContext.Provider
         value={{
             alerts:state,
-            setAlert
+            setAlert,
+            removeAlert,
+            testFunction
         }}>
             {props.children}
         </AlertContext.Provider>

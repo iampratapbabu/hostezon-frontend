@@ -2,54 +2,55 @@ import React, { Fragment,useState,useContext } from 'react';
 import AlertContext from '../../context/alert/AlertContext';
 import AuthContext from '../../context/auth/AuthContext';
 
-import Header from '../../layout/Header';
+
 
 const Signup = () => {
 const alertContext = useContext(AlertContext);
 const authContext = useContext(AuthContext);
-const {setAlert} = alertContext;
+const {setAlert,testFunction} = alertContext;
 const {register} = authContext;
 
   const [user,setUser] = useState({
-    username:'',
+    name:'',
     email:'',
     password:'',
     passwordConfirm:''
   });
 
-  const {username,email,password,passwordConfirm} = user;
+  const {name,email,password,passwordConfirm} = user;
 
   const onChange = e =>setUser({...user,[e.target.name]:e.target.value});
   
   const onSubmit = (e) =>{
     e.preventDefault();
-      console.log("before alert submit");
-    if(username==='' || email==='' || password ===''){
-      // setAlert('Please Fill all the fields','danger');
-      console.log("please fill all the fields");
+      
+    if(name==='' || email==='' || password ===''){
+      testFunction();
+      setAlert('Please Fill all the fields mere bhai','danger');
       
     }else if(password !== passwordConfirm){
       // setAlert("Password do not match","secondary");
       console.log("password do not match");
     }else{
-      console.log("final submit");
+      
       register({
-        username,
+        name,
         email,
         password,
         passwordConfirm
       });
+      console.log(name,email,password,passwordConfirm);
     }
   };
 
     return (
         <Fragment>
-        <Header/>
+       
       <div className="container">
       <h1>Account Register</h1>
       <form onSubmit={onSubmit}>
           <div class="form-group">
-            <input type="text" class="form-control" name='username' value={username} onChange={onChange} placeholder="Enter Your Name"/>
+            <input type="text" class="form-control" name='name' value={name} onChange={onChange} placeholder="Enter Your Name"/>
             </div>
             <div class="form-group">
             <input type="email" class="form-control" name='email' value={email} onChange={onChange} placeholder="Enter Your Email"/>

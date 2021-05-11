@@ -29,7 +29,7 @@ const AuthState = (props) =>{
             headers:{
                 'Content-Type':'application/json'
             }
-        }
+        };
         try{
             const res = await axios.post(`${process.env.REACT_APP_URL}/hostezon/v1/users/signup`,formData,config);
             dispatch({
@@ -39,8 +39,8 @@ const AuthState = (props) =>{
         }catch(err){
             dispatch({
                 type:REGISTER_FAIL,
-                payload:err.response.data
-            })
+                payload:err.response.data.message
+            });
         }
     };
 
@@ -51,7 +51,7 @@ const AuthState = (props) =>{
     const logout = () => console.log("logout user");
 
     //clear errors
-    const clearErrors = () => console.log("clear user");
+    const clearErrors = () => dispatch({type:CLEAR_ERRORS});
 
 
     return(

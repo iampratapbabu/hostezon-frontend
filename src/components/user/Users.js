@@ -30,9 +30,15 @@ class Users extends Component{
 
     render(){
         // console.log(process.env.REACT_APP_URL);
+        
+        
+
         if (this.state.loading) return <Spinner />;
         return (
             <Fragment>
+            <div className="container">
+            <h2>All Users</h2>
+            <hr/>
                 <div style={usersStyle}>
                 
                 {this.state.users.map(user =>(
@@ -40,6 +46,7 @@ class Users extends Component{
                     
                    
                 ))}
+                </div>
                 </div>
             </Fragment>
         )
@@ -50,8 +57,8 @@ class Users extends Component{
     //This is used to make the output in grid style vey important
     const usersStyle={
         display:'grid',
-        gridTemplateColumns:'repeat(1 ,1fr)',
-        gridGap:'1rem'
+        gridTemplateColumns:'repeat(3 ,1fr)',
+        gridGap:'0.5rem'
     }  
     //repeat me value 1 ke jagah 2 krenge then ek row me 2 grid 
     //jitna value change utna hi grid change

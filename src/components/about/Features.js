@@ -19,20 +19,8 @@ const Features = () => {
            As well as you will also get previous year papers of all subjets. to understand
            the Questions Pattern.</p>
            </div>
-
-           <div class="shadow p-3 mb-5 bg-white rounded col-sm-6">
-           <h3><i class="fas fa-users icon-home"></i><span>Social</span></h3>
-           <p>This is useful to connect all the students and share their views
-           and opiniions </p>
-           </div>
-
-           <div class="shadow p-3 mb-5 bg-white rounded col-sm-6">
-           <h3><i class="fas fa-shopping-cart icon-home"></i><span>Shop</span></h3>
-           <p>An e-Commerce portal to sell the used goods to other hostelers :</p>
-           </div>
-
-           </div>
            
+        </div>
         </div>
     )
 }

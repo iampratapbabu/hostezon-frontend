@@ -1,8 +1,8 @@
 import React, { Fragment,useState } from 'react';
-import Header from '../../layout/Header';
+
 import {Link} from 'react-router-dom';
 
-const Signup = () => {
+const Login = () => {
 
   const [user,setUser] = useState({
     
@@ -20,27 +20,28 @@ const Signup = () => {
 
     return (
         <Fragment>
-        <Header/>
+        
       <div className="container">
       <h1>Account Login</h1>
       <form onSubmit={onSubmit}>
           
-            <div class="form-group">
-            <input type="email" class="form-control" name='email' value={email} onChange={onChange} placeholder="Enter Your Email"/>
+            <div className="form-group">
+            <input type="email" className="form-control" name='email' value={email} onChange={onChange} placeholder="Enter Your Email"/>
             </div>
        
-          <div class="form-group">
-          <input type="password" class="form-control" name='password' value={password} onChange={onChange} placeholder="Enter Password"/>
+          <div className="form-group">
+          <input type="password" className="form-control" name='password' value={password} onChange={onChange} placeholder="Enter Password"/>
           </div>
           
 
-            <input type="submit" value="LogIn" className="btn btn-secondary"/>
+            <input type="submit" value="LogIn" className="btn btn-primary mb-1"/>
             </form>
-            <Link to='/signup'>Signup</Link>
+            <h5>Not having an account</h5>
+            <Link to='/signup' className="btn btn-dark">Signup Now !</Link>
         </div>
       
         </Fragment>
     )
 }
 
-export default Signup;
+export default Login;
