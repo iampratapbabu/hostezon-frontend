@@ -1,4 +1,4 @@
-import React,{Fragment} from 'react';
+import React,{Fragment,useContext,useEffect} from 'react';
 import { Route,Switch } from "react-router-dom";
 
 
@@ -22,6 +22,7 @@ import Error from './layout/Error';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Alerts from './layout/Alerts';
+import setAuthToken from './utils/setAuthToken';
 
 //subcomponents
 import Header from './layout/Header';
@@ -31,11 +32,8 @@ import Footer from './layout/Footer';
 
 
 
-
-
-
-
 const App =() => {
+ 
   return (
     <AuthState>
     <BlogsState>
@@ -44,7 +42,6 @@ const App =() => {
     <Fragment>
     <Header/>
     <hr/>
-    <h5>ALert will show down here</h5>
     <Alerts/>
     <Switch>
     <Route exact path='/' component={About} />

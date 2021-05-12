@@ -1,14 +1,21 @@
-import React, { Fragment,useState,useContext } from 'react';
+import React, { Fragment,useState,useContext, useEffect } from 'react';
 import AlertContext from '../../context/alert/AlertContext';
 import AuthContext from '../../context/auth/AuthContext';
 
 
 
-const Signup = () => {
+const Signup = (props) => {
 const alertContext = useContext(AlertContext);
 const authContext = useContext(AuthContext);
 const {setAlert,testFunction} = alertContext;
-const {register} = authContext;
+const {register,isAuthenticated} = authContext;
+
+useEffect(()=>{
+  if(isAuthenticated){
+    props.history.push('/blogs');
+  }
+  //eslint-disable-next-line
+},[])
 
   const [user,setUser] = useState({
     name:'',

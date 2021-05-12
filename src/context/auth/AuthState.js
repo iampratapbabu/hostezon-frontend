@@ -3,6 +3,8 @@ import axios from 'axios';
 import AuthContext from './AuthContext';
 import AuthReducer from './AuthReducer';
 
+import setAuthToken from '../../utils/setAuthToken';
+
 import {REGISTER_SUCCESS,REGISTER_FAIL,
     USER_LOADED,AUTH_ERROR,LOGIN_SUCCESS,LOGIN_FAIL,
     LOGOUT,CLEAR_ERRORS} from '../types';
@@ -21,7 +23,25 @@ const AuthState = (props) =>{
     //all reducer functions
 
     //load user
-    const loadUser = () => console.log("load user");
+    const loadUser = async() => {
+
+        // if(localStorage.token)
+        //     setAuthToken(localStorage.token);
+
+
+        try{
+            const res = await axios.get(`${process.env.REACT_APP_URL}/hostezon/v1/users/singleuser`,{
+                headers:{
+                    'x-auth-token':localStorage.token
+                }
+            });
+            dispatch({
+                type:USER_LOADED,
+                payload:res.data});
+        }catch(err){
+            dispatch({type:AUTH_ERROR});
+        }
+    }
 
     //register user
     const register = async formData =>{
@@ -32,10 +52,13 @@ const AuthState = (props) =>{
         };
         try{
             const res = await axios.post(`${process.env.REACT_APP_URL}/hostezon/v1/users/signup`,formData,config);
+            //console.log(res.data);
+            //localStorage.setItem('token',res.data.token);
             dispatch({
                 type:REGISTER_SUCCESS,
                 payload:res.data
-            })
+            });
+            loadUser();
         }catch(err){
             dispatch({
                 type:REGISTER_FAIL,
