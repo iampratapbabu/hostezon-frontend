@@ -1,4 +1,7 @@
+import axios from 'axios';
+
 import {
+    GET_BLOGS,
     ADD_BLOG,
     DELETE_BLOG,
     SET_CURRENT_BLOG, 
@@ -13,6 +16,12 @@ import {
 
    export default (state,action) =>{
        switch(action.type){
+        case GET_BLOGS:
+            return{
+             ...state,
+             blogs:action.payload,
+             loading:false
+            };
            case ADD_BLOG:
                return{
                 ...state,

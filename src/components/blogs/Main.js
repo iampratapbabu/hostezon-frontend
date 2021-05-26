@@ -25,7 +25,7 @@ const Main = () => {
          
          <BlogForm/>
          <hr/>
-         <Search/>
+       
          <hr/>
          <Blogs/>
        </div>

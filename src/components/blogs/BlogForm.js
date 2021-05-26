@@ -112,6 +112,7 @@ const BlogForm = () => {
 
                 <input type="submit"
                 value = {current?'Submit':'Add Blog'}
+                
                 className="btn btn-primary mt-2"/>
                
 

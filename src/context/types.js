@@ -1,6 +1,7 @@
 //write all the types used in the application
 
 //blog types
+export const GET_BLOGS = 'GET_BLOGS';
 export const ADD_BLOG = 'ADD_BLOG';
 export const DELETE_BLOG = 'DELETE_BLOG';
 export const SET_CURRENT_BLOG = 'SET_BLOG';

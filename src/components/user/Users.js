@@ -1,4 +1,4 @@
-import React,{Fragment,Component} from 'react';
+import React,{Fragment,Component,useState,useEffect} from 'react';
 import axios from 'axios';
 
 
@@ -6,6 +6,8 @@ import Spinner from '../../animation/Spinner';
 
 
 import UserItem from './UserItem';
+
+
 
 class Users extends Component{
 
