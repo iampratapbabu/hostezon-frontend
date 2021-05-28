@@ -1,8 +1,18 @@
-import React, { Fragment,useState } from 'react';
-
+import React, { Fragment,useState,useEffect,useContext } from 'react';
 import {Link} from 'react-router-dom';
+import AuthContext from '../../context/auth/AuthContext';
 
-const Login = () => {
+
+const Login = (props) => {
+const authContext = useContext(AuthContext);
+const {register,isAuthenticated} = authContext;
+
+useEffect(()=>{
+  if(isAuthenticated){
+    props.history.push('/blogs');
+  }
+  //eslint-disable-next-line
+},[]);
 
   const [user,setUser] = useState({
     

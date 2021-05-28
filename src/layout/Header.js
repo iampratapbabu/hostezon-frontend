@@ -1,7 +1,17 @@
-import React,{Fragment} from 'react';
+import React,{Fragment,useContext} from 'react';
 import {Link} from "react-router-dom";
+import AuthContext from '../context/auth/AuthContext';
 
 const Header =() => {
+const authContext = useContext(AuthContext);
+const {register,isAuthenticated,user,logout} = authContext;
+
+
+ 
+  //eslint-disable-next-line
+
+  
+
   return (
     <Fragment>
 
@@ -24,7 +34,10 @@ const Header =() => {
             <Link class="nav-link" to="/users">Users</Link>
           </li>
           <li class="nav-item btn-margin">
-            <Link class="nav-link" to="/login">Login</Link>
+            <Link class="nav-link" to="/login">{/*isAuthenticated ? user.name:'Login'*/}Login</Link>
+         </li>
+         <li class="nav-item btn-margin">
+            <Link class="nav-link" onClick={logout}>Logout</Link>
          </li>
           
         </ul>

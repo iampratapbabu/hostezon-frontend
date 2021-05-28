@@ -7,7 +7,7 @@ import AuthContext from '../../context/auth/AuthContext';
 const Signup = (props) => {
 const alertContext = useContext(AlertContext);
 const authContext = useContext(AuthContext);
-const {setAlert,testFunction} = alertContext;
+const {setAlert} = alertContext;
 const {register,isAuthenticated} = authContext;
 
 useEffect(()=>{
@@ -15,7 +15,7 @@ useEffect(()=>{
     props.history.push('/blogs');
   }
   //eslint-disable-next-line
-},[])
+},[]);
 
   const [user,setUser] = useState({
     name:'',
@@ -32,7 +32,7 @@ useEffect(()=>{
     e.preventDefault();
       
     if(name==='' || email==='' || password ===''){
-      testFunction();
+     
       setAlert('Please Fill all the fields mere bhai','danger');
       
     }else if(password !== passwordConfirm){
@@ -47,6 +47,8 @@ useEffect(()=>{
         passwordConfirm
       });
       console.log(name,email,password,passwordConfirm);
+      alert("Successfully registered");
+      props.history.push('/blogs');
     }
   };
 

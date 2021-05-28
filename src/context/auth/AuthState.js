@@ -30,9 +30,9 @@ const AuthState = (props) =>{
 
 
         try{
-            const res = await axios.get(`${process.env.REACT_APP_URL}/hostezon/v1/users/singleuser`,{
+            const res = await axios.get(`https://hostezon-backend.herokuapp.com/hostezon/v1/users/singleuser`,{
                 headers:{
-                    'x-auth-token':localStorage.token
+                    'x-auth-token':localStorage.getItem('token')
                 }
             });
             dispatch({
@@ -41,7 +41,7 @@ const AuthState = (props) =>{
         }catch(err){
             dispatch({type:AUTH_ERROR});
         }
-    }
+    };
 
     //register user
     const register = async formData =>{
@@ -51,7 +51,7 @@ const AuthState = (props) =>{
             }
         };
         try{
-            const res = await axios.post(`${process.env.REACT_APP_URL}/hostezon/v1/users/signup`,formData,config);
+            const res = await axios.post(`https://hostezon-backend.herokuapp.com/hostezon/v1/users/signup`,formData,config);
             //console.log(res.data);
             //localStorage.setItem('token',res.data.token);
             dispatch({
@@ -59,6 +59,8 @@ const AuthState = (props) =>{
                 payload:res.data
             });
             loadUser();
+            //user loaded hai to automatically blogs pr push kr de rha hai agar yahan academics likh de to academics pr push kr dega
+            //props.history.push('/blogs');
         }catch(err){
             dispatch({
                 type:REGISTER_FAIL,
@@ -71,7 +73,11 @@ const AuthState = (props) =>{
     const login = () => console.log("login user");
 
     //logout
-    const logout = () => console.log("logout user");
+    const logout = () =>{
+        localStorage.removeItem('token')
+        props.history.push('/')
+      };
+    
 
     //clear errors
     const clearErrors = () => dispatch({type:CLEAR_ERRORS});
