@@ -107,9 +107,9 @@ const getBlogs = async () =>{
   console.log("Get Blogs runs");
   
   try{
-    const res =await axios.get(`${process.env.REACT_APP_URL}/hostezon/v1/blogs`);
+    const res =await axios.get(`https://hostezon-backend.herokuapp.com/hostezon/v1/blogs`);
     dispatch({type:GET_BLOGS,payload:res.data.blogs});
-    //console.log(res.data.blogs);
+    console.log(res.data.blogs);
 
   }catch(err){
     console.log(err);
@@ -127,7 +127,7 @@ const addBlog = async (blog) =>{
     }
   };
   try{
-    const res = await axios.post(`${process.env.REACT_APP_URL}/hostezon/v1/blogs/create-blog`,blog,config);
+    const res = await axios.post('https://hostezon-backend.herokuapp.com/hostezon/v1/blogs/create-blog',blog,config);
     dispatch({type:ADD_BLOG,payload:res.data});
 
   }catch(err){
