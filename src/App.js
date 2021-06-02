@@ -1,4 +1,4 @@
-import React,{Fragment,useContext,useEffect} from 'react';
+import React,{Fragment} from 'react';
 import { Route,Switch } from "react-router-dom";
 
 
@@ -6,7 +6,7 @@ import { Route,Switch } from "react-router-dom";
 //blogs context
 import BlogsState from './context/blogs/BlogsState';
 import AuthState from './context/auth/AuthState';
-import AlertState from './context/alert/AlertState';
+
 
 
 
@@ -14,6 +14,8 @@ import AlertState from './context/alert/AlertState';
 
 import Academics from './components/academics/Main';
 import Blogs from './components/blogs/Main';
+import SingleBlog from './components/blogs/SingleBlog';
+
 import About from './components/about/Main';
 import Users from './components/user/Users';
 import Courses from './components/courses/Main';
@@ -21,7 +23,7 @@ import Courses from './components/courses/Main';
 import Error from './layout/Error';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
-import Alerts from './layout/Alerts';
+
 import setAuthToken from './utils/setAuthToken';
 
 //subcomponents
@@ -37,16 +39,17 @@ const App =() => {
   return (
     <AuthState>
     <BlogsState>
-    <AlertState>
+    
 
     <Fragment>
     <Header/>
     <hr/>
-    <Alerts/>
+    
     <Switch>
     <Route exact path='/' component={About} />
     <Route exact path='/academics' component={Academics} />
     <Route exact path='/blogs' component={Blogs} />
+    <Route exact path='/blogs/:id' component={SingleBlog} />
     <Route exact path='/courses' component={Courses} />
     <Route exact path='/users' component={Users} />
     <Route exact path='/login' component={Login} />
@@ -58,7 +61,7 @@ const App =() => {
     </Fragment>
 
 
-    </AlertState>
+    
     </BlogsState>
     </AuthState>
     

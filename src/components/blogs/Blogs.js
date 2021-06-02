@@ -1,6 +1,8 @@
 import React,{Fragment,useContext,useEffect} from 'react';
 import BlogsContext from '../../context/blogs/BlogsContext';
 import BlogItem from './BlogItem';
+import Spinner from '../../animation/Spinner';
+
 
 
 
@@ -12,15 +14,18 @@ const Blogs = () => {
     useEffect(() => {
         console.log("Use effect fired");
       getBlogs();
+      //eslint-disable-next-line
     }, []);
+
+    
 
     return (
         <Fragment>
-        {blogs != null ? <div>
+       
             {blogs.map(blog => (
                 <BlogItem key={blog.id} blog={blog} />
             ))}
-            </div>: 'Blogs Loading...'}
+           
             
         
         </Fragment>

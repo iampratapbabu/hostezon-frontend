@@ -1,13 +1,13 @@
 import React, { Fragment,useState,useContext, useEffect } from 'react';
-import AlertContext from '../../context/alert/AlertContext';
+
 import AuthContext from '../../context/auth/AuthContext';
 
 
 
 const Signup = (props) => {
-const alertContext = useContext(AlertContext);
+
 const authContext = useContext(AuthContext);
-const {setAlert} = alertContext;
+
 const {register,isAuthenticated} = authContext;
 
 useEffect(()=>{
@@ -33,11 +33,11 @@ useEffect(()=>{
       
     if(name==='' || email==='' || password ===''){
      
-      setAlert('Please Fill all the fields mere bhai','danger');
+      alert('Please Fill all the fields mere bhai');
       
     }else if(password !== passwordConfirm){
       // setAlert("Password do not match","secondary");
-      console.log("password do not match");
+      alert("password do not match");
     }else{
       
       register({
@@ -48,7 +48,8 @@ useEffect(()=>{
       });
       console.log(name,email,password,passwordConfirm);
       alert("Successfully registered");
-      props.history.push('/blogs');
+      //after successful registration we redirect to blogs
+      //props.history.push('/blogs');
     }
   };
 

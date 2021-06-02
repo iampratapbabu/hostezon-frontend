@@ -27,10 +27,8 @@ const AuthState = (props) =>{
 
         // if(localStorage.token)
         //     setAuthToken(localStorage.token);
-
-
         try{
-            const res = await axios.get(`https://hostezon-backend.herokuapp.com/hostezon/v1/users/singleuser`,{
+            const res = await axios.get(`${process.env.REACT_APP_URL}/hostezon/v1/users/singleuser`,{
                 headers:{
                     'x-auth-token':localStorage.getItem('token')
                 }
@@ -51,31 +49,56 @@ const AuthState = (props) =>{
             }
         };
         try{
-            const res = await axios.post(`https://hostezon-backend.herokuapp.com/hostezon/v1/users/signup`,formData,config);
+            const res = await axios.post(`${process.env.REACT_APP_URL}/hostezon/v1/users/signup`,formData,config);
             //console.log(res.data);
             //localStorage.setItem('token',res.data.token);
             dispatch({
                 type:REGISTER_SUCCESS,
                 payload:res.data
             });
+            //Now user loaded
             loadUser();
-            //user loaded hai to automatically blogs pr push kr de rha hai agar yahan academics likh de to academics pr push kr dega
-            //props.history.push('/blogs');
+            
+           
         }catch(err){
             dispatch({
                 type:REGISTER_FAIL,
-                payload:err.response.data.message
+                payload:err
             });
         }
     };
 
     //login
-    const login = () => console.log("login user");
+    const login = async(formData) => {
+        const config={
+            headers:{
+                'Content-Type':'application/json'
+            }
+        };
+        try{
+            const res = await axios.post(`${process.env.REACT_APP_URL}/hostezon/v1/users/login`,formData,config);
+            //console.log(res.data);
+            //localStorage.setItem('token',res.data.token);
+            dispatch({
+                type:REGISTER_SUCCESS,
+                payload:res.data
+            });
+            //Now user loaded
+            loadUser();
+            
+           
+        }catch(err){
+            dispatch({
+                type:REGISTER_FAIL,
+                payload:err
+            });
+        }
+    }
 
     //logout
     const logout = () =>{
-        localStorage.removeItem('token')
-        props.history.push('/')
+        localStorage.removeItem('token');
+        
       };
     
 

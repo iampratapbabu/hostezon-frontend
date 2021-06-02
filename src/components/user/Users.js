@@ -1,10 +1,8 @@
-import React,{Fragment,Component,useState,useEffect} from 'react';
+import React,{Fragment,Component} from 'react';
 import axios from 'axios';
 
 
 import Spinner from '../../animation/Spinner';
-
-
 import UserItem from './UserItem';
 
 
@@ -20,7 +18,7 @@ class Users extends Component{
         this.setState({
             loading:true
         })
-       const res = await axios.get(`https://hostezon-backend.herokuapp.com/hostezon/v1/users`);
+       const res = await axios.get(`${process.env.REACT_APP_URL}/hostezon/v1/users`);
            
            this.setState({
                loading:false,

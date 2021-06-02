@@ -5,11 +5,13 @@ import AuthContext from '../../context/auth/AuthContext';
 
 const Login = (props) => {
 const authContext = useContext(AuthContext);
-const {register,isAuthenticated} = authContext;
+const {isAuthenticated,login} = authContext;
 
 useEffect(()=>{
-  if(isAuthenticated){
-    props.history.push('/blogs');
+  if(isAuthenticated)
+    alert("You are already Logged In");
+  else{
+    
   }
   //eslint-disable-next-line
 },[]);
@@ -25,8 +27,20 @@ useEffect(()=>{
   const onChange = e =>setUser({...user,[e.target.name]:e.target.value});
   const onSubmit = (e) =>{
     e.preventDefault();
-    console.log("submit");
-  }
+    if(email === "" || password === "")
+      alert("Please Fill out The required fields");
+    
+    login({
+      email,
+      password
+    });
+    console.log(email,password);
+    alert("You have been successfully logged in");
+    setUser({
+      email:"",
+      password:""
+    })
+  };
 
     return (
         <Fragment>
