@@ -13,7 +13,9 @@ const Blogs = () => {
     const {blogs,getBlogs} = blogsContext;
     useEffect(() => {
         console.log("Use effect fired");
+
       getBlogs();
+      //console.log("Blogs",blogs);
       //eslint-disable-next-line
     }, []);
 
