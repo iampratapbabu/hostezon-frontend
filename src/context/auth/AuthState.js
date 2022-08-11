@@ -28,7 +28,7 @@ const AuthState = (props) =>{
         // if(localStorage.token)
         //     setAuthToken(localStorage.token);
         try{
-            const res = await axios.get(`${process.env.REACT_APP_URL}/hostezon/v1/users/singleuser`,{
+            const res = await axios.get(`${process.env.REACT_APP_URL}/app/v1/users/singleuser`,{
                 headers:{
                     'x-auth-token':localStorage.getItem('token')
                 }
@@ -49,7 +49,7 @@ const AuthState = (props) =>{
             }
         };
         try{
-            const res = await axios.post(`${process.env.REACT_APP_URL}/hostezon/v1/users/signup`,formData,config);
+            const res = await axios.post(`${process.env.REACT_APP_URL}/app/v1/users/signup`,formData,config);
             //console.log(res.data);
             //localStorage.setItem('token',res.data.token);
             dispatch({
@@ -76,7 +76,7 @@ const AuthState = (props) =>{
             }
         };
         try{
-            const res = await axios.post(`${process.env.REACT_APP_URL}/hostezon/v1/users/login`,formData,config);
+            const res = await axios.post(`${process.env.REACT_APP_URL}/app/v1/users/login`,formData,config);
             //console.log(res.data);
             //localStorage.setItem('token',res.data.token);
             dispatch({
