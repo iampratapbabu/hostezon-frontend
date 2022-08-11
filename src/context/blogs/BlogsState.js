@@ -33,7 +33,7 @@ const BlogsState = (props) =>{
 
 //   //async function bana ke populate krte hain
 //   async function loadFunction(){
-//     const res = await axios.get(`${process.env.REACT_APP_URL}/hostezon/v1/blogs`);
+//     const res = await axios.get(`${process.env.REACT_APP_URL}/app/v1/blogs`);
 //     console.log(res.data);
     
 //   }
@@ -54,7 +54,7 @@ const getBlogs = async () =>{
   console.log(process.env.REACT_APP_VAR);
   
   try{
-    const res =await axios.get(`${process.env.REACT_APP_URL}/hostezon/v1/blogs`,config);
+    const res =await axios.get(`${process.env.REACT_APP_URL}/app/v1/blogs`,config);
     dispatch({type:GET_BLOGS,payload:res.data.blogs});
   
 
@@ -78,7 +78,7 @@ const addBlog = async (blog) =>{
     }
   };
   try{
-    const res = await axios.post(`${process.env.REACT_APP_URL}/hostezon/v1/blogs/create-blog`,blog,config);
+    const res = await axios.post(`${process.env.REACT_APP_URL}/app/v1/blogs/create-blog`,blog,config);
     dispatch({type:ADD_BLOG,payload:res.data});
 
   }catch(err){
