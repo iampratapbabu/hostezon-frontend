@@ -54,9 +54,9 @@ const App =() => {
     <Route exact path='/users' component={Users} />
     <Route exact path='/login' component={Login} />
     <Route exact path='/signup' component={Signup} />
-        <Route exact path='*' component={Error} />
+    <Route exact path='*' component={Error} />
     </Switch>
-    <p>There are many hooks to react firebase</p>
+    
     <Footer/>
     </Fragment>
 

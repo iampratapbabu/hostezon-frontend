@@ -40,6 +40,7 @@ const SingleBlog = () =>{
     return(
         <Fragment>
             <div>
+            
                 <h1>{title}</h1>
                 <hr/>
                 <h4>{body}</h4>

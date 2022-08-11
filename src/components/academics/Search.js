@@ -7,7 +7,6 @@ class Search extends Component {
         year:'',
         semester:'',
         branchName:null,
-        branchYear:null,
         branchSemester:null
     }
 
@@ -17,12 +16,6 @@ class Search extends Component {
         });
     }
 
-    handleChangeYear =(e) =>{
-        this.setState({
-            
-            branchYear:e.target.value
-        });
-    }
 
     handleChangeSemester =(e) =>{
         this.setState({
@@ -44,7 +37,6 @@ class Search extends Component {
         e.preventDefault();
         this.props.searchItem(this.state);
         this.setState({
-            year:'',
         semester:'',
         branchName:null,
         branchYear:null,
@@ -59,7 +51,7 @@ class Search extends Component {
                 <form onSubmit={this.onSubmit}>
                 
                 {/* <label for="item">Choose your Branch</label> */}
-                <select className="ml-2" id="branches" name="branchs" onChange={this.handleChangeName}>
+                <select className="ml-2" id="branches" name="branches" onChange={this.handleChangeName}>
                 <option value="null">Select Your Branch</option>
                 <option value="computer-science">Computer Science</option>
                 <option value="civil-engineering">Civil Engineering</option>
@@ -67,16 +59,6 @@ class Search extends Component {
                 <option value="electrical-engineering">Electrical & Electronics</option>
                 <option value="electronics-engineering">Electronics & Communication</option>
                 <option value="information-technology">Information Technology</option>
-                </select>
-
-
-                {/* <label for="item">Choose your year</label> */}
-                <select className="ml-2" id="year" name="year" onChange={this.handleChangeYear}>
-                <option value="null">Select Your Year</option>
-                <option value="1">First Year</option>
-                <option value="2">Second year</option>
-                <option value="3">Third Year</option>
-                <option value="4">Final year</option>            
                 </select>
 
                 {/* <label for="item">Choose your Semester</label> */}
