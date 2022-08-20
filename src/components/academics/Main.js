@@ -13,13 +13,13 @@ const Main = () => {
         <div class = "container">
       
          <h1>Academics</h1>
-        {hello()}
+        <Academics />
         </div>
         
         </Fragment>
          
        
-    )
+    );
 }
 
 export default Main
