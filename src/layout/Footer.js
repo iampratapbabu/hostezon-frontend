@@ -4,7 +4,7 @@ const Footer =() => {
   return (
     <Fragment>
     <div className="footer">
-    <a href="https://www.linkedin.com/in/pratapbabu/"><p class = "footer-text">Developed By - Satyam Mishra</p></a>
+    <a href="https://www.linkedin.com/in/pratapbabu/"><p class = "footer-text">Developed By - Tej Pratap</p></a>
     </div>
     </Fragment>
   );
