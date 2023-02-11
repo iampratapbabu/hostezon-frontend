@@ -27,7 +27,7 @@ class Academics extends Component {
 searchItem = async ({branch,year,semester,branchName,branchYear,branchSemester}) =>{
     this.setState({loading:true})
     
-    const res = await axios.get(`https://hostezonserver.herokuapp.com/app/v1/academics/${branchName}/${branchYear}/${branchSemester}`);
+    const res = await axios.get(`https://hostezon.onrender.com/app/v1/academics/${branchName}/${branchYear}/${branchSemester}`);
     
    
     this.setState({
